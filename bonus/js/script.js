@@ -58,8 +58,7 @@ const formBtn = document.getElementById('addMemberButton');
 
 
 //al click del bottone, inserisce l'oggetto nell'array team
-formBtn.addEventListener('click', function (event) {
-  event.preventDefault(); //per evitare il refresh della pagina
+formBtn.addEventListener('click', function () {
 
   const name = inputName.value;
   const role = inputRole.value;
