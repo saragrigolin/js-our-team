@@ -49,6 +49,34 @@ const team = [
 let containerCards = document.querySelector('.team-container');
 makeCards(team, containerCards);
 
+//BONUS
+//prendo gli input e il bottone dal form dell'html
+const inputName = document.getElementById('name');
+const inputRole = document.getElementById('role');
+const inputImage = document.getElementById('image');
+const formBtn = document.getElementById('addMemberButton');
+
+//al click del bottone, inserisce l'oggetto nell'array team
+formBtn.addEventListener('click', function (event) {
+  event.preventDefault(); //per evitare il refresh della pagina
+
+  const name = inputName.value;
+  const role = inputRole.value;
+  const image = inputImage.value;
+  
+  //controllo che l'utente abbia compilato i campi
+  if (name.length > 0 && role.length > 0 && image.length > 0) {
+    const object = {
+      name: name,
+      role: role,
+      image: image,
+    };
+
+    //inserisco object nell'array del team
+    team.push(object);
+    console.log(object);
+  }
+})
 
 //funzione per creare le cards
 function makeCards (array, containerCards) {
