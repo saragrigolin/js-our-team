@@ -51,8 +51,8 @@ makeCards(team, containerCards);
 
 
 //funzione per creare le cards
-function makeCards (array, containerCards) {
-  containerCards.innerHTML = '';
+function makeCards (array, container) {
+  container.innerHTML = '';
   for (let index = 0; index < array.length; index++) {
     const object = array[index];
     const templateCard = `
@@ -68,6 +68,6 @@ function makeCards (array, containerCards) {
                 <p>${object.role}</p>
               </div>
             </div>`;
-    containerCards.innerHTML += templateCard;
+    container.innerHTML += templateCard;
   }
 }

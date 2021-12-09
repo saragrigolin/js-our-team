@@ -56,6 +56,7 @@ const inputRole = document.getElementById('role');
 const inputImage = document.getElementById('image');
 const formBtn = document.getElementById('addMemberButton');
 
+
 //al click del bottone, inserisce l'oggetto nell'array team
 formBtn.addEventListener('click', function (event) {
   event.preventDefault(); //per evitare il refresh della pagina
@@ -84,8 +85,8 @@ formBtn.addEventListener('click', function (event) {
 })
 
 //funzione per creare le cards
-function makeCards (array, containerCards) {
-  containerCards.innerHTML = '';
+function makeCards (array, container) {
+  container.innerHTML = '';
   for (let index = 0; index < array.length; index++) {
     const object = array[index];
     const templateCard = `
@@ -101,6 +102,6 @@ function makeCards (array, containerCards) {
                 <p>${object.role}</p>
               </div>
             </div>`;
-    containerCards.innerHTML += templateCard;
+    container.innerHTML += templateCard;
   }
 }
