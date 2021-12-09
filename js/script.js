@@ -11,6 +11,7 @@ console.log() è nostro amico.
 Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzioni più piccole.
 */
 
+//array team
 const team = [
   {
     name: 'Wayne Barnett',
@@ -43,3 +44,30 @@ const team = [
     image: 'barbara-ramos-graphic-designer.jpg',
   },
 ];
+
+//prendo il div dall'html e inserisco la funzione per creare le card
+let containerCards = document.querySelector('.team-container');
+makeCards(team, containerCards);
+
+
+//funzione per creare le cards
+function makeCards (array, containerCards) {
+  containerCards.innerHTML = '';
+  for (let index = 0; index < array.length; index++) {
+    const object = array[index];
+    const templateCard = `
+      <div class="team-card">
+              <div class="card-image">
+                <img
+                  src="img/${object.image}"
+                  alt="${object.name}"
+                />
+              </div>
+              <div class="card-text">
+                <h3>${object.name}</h3>
+                <p>${object.role}</p>
+              </div>
+            </div>`;
+    containerCards.innerHTML += templateCard;
+  }
+}
