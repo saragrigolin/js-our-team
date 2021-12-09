@@ -75,6 +75,11 @@ formBtn.addEventListener('click', function (event) {
     //inserisco object nell'array del team
     team.push(object);
     console.log(object);
+
+    //richiamo funzione per inserire la card nel DOM
+    makeCards(team, containerCards);
+  } else {
+    alert('Non hai inserito i dati');
   }
 })
 
